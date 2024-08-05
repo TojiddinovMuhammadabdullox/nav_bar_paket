@@ -1,39 +1,50 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# modern_nav_bar
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+`modern_nav_bar` is a customizable and modern bottom navigation bar widget for Flutter applications. It allows you to create a bottom navigation bar with animated transitions and customizable icons and labels.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Customizable icons and labels
+- Smooth animations
+- Easy to integrate
+- Lightweight and efficient
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To start using the `modern_nav_bar` package, add it to your `pubspec.yaml`:
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  modern_nav_bar: ^0.0.1
 ```
+## Usage
+```
+import 'package:flutter/material.dart';
+import 'package:modern_nav_bar/modern_nav_bar.dart';
 
-## Additional information
+void main() {
+  runApp(MyApp());
+}
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Modern Bottom Nav Bar Example')),
+        body: Center(child: Text('Content goes here')),
+        bottomNavigationBar: ModernBottomNavBar(
+          items: [
+            BottomNavItem(icon: Icons.home, label: 'Home', color: Colors.blue),
+            BottomNavItem(icon: Icons.search, label: 'Search', color: Colors.green),
+            BottomNavItem(icon: Icons.person, label: 'Profile', color: Colors.red),
+          ],
+          onItemSelected: (index) {
+            // Handle item selection
+          },
+        ),
+      ),
+    );
+  }
+}
+```
