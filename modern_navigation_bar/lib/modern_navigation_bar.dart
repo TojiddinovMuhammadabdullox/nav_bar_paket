@@ -2,7 +2,6 @@ library modern_navigation_bar;
 
 import 'package:flutter/material.dart';
 
-/// A Calculator.import 'package:flutter/material.dart';
 
 class ModernBottomNavBar extends StatefulWidget {
   final List<BottomNavItem> items;
